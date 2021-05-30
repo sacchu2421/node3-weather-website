@@ -1,4 +1,3 @@
-console.log("hello sachin this is a client side javascript file")
 
 /*fetch('http://puzzle.mead.io/puzzle').then((response)=>{
     response.json().then((data)=>{
