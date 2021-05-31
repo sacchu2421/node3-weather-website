@@ -10,11 +10,11 @@ const forecast = (latitude,longitude, callback) => {
             callback("the coordinates are wrong please type a valid one",undefined)
 
         }else{
-            callback(undefined, {
-                weather_desc: body.current.weather_descriptions[0], //response.
-                temperature: body.current.temperature,//,,
-                precipitation: body.current.precip//,,
-            })
+            callback(undefined, "the weather description is " + body.current.weather_descriptions[0] + " and the Temperature of the area is " +  body.current.temperature +" degree fahrenheit and the precipitation percentage is " + body.current.precip +" %"
+              //  weather_desc: body.current.weather_descriptions[0], //response.
+              //  temperature: body.current.temperature,//,,
+              //  precipitation: body.current.precip//,,
+            )
         }
     })
 
