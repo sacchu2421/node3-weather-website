@@ -2,6 +2,7 @@ const geocode = require('./utils/geocode')
 const forecast = require('./utils/forecast')
 const path = require('path') // core nodejs module no need to install using npm
 const express = require('express')
+
 const hbs = require('hbs')
 console.log(__dirname) //it tell us the path of the directory 
 //console.log(path.join(__dirname,'../public'))
@@ -9,6 +10,7 @@ console.log(__dirname) //it tell us the path of the directory
 
 // go to expressjs.com/api reference for further info
 const app = express() // create a variable to store the express function
+const port = process.env.PORT || 3000 // use port if not use 3000
 const publicpath = path.join(__dirname, '../public')
 const viewspath = path.join(__dirname, '../template/views')// to customize the views directory use this we can also put it anywhere but just put the path here
 const partialspath = path.join(__dirname, '../template/partials')
@@ -149,6 +151,6 @@ app.get('/help/*', (req, res) => {// '*' is a wild card if nothing is found then
         errorMessage: 'Help article not found'
     })
 })
-app.listen(3000, () => {// this is to start the server here app.listen(port=where the file will reun,(callback function optional)=>{})
-    console.log("the web server is on")// use it single time
+app.listen(port, () => {// this is to start the server here app.listen(port=where the file will reun,(callback function optional)=>{})
+    console.log("the web server is on" + port)// use it single time
 })

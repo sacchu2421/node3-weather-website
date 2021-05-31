@@ -30,7 +30,7 @@ weatherForm.addEventListener('submit', (event) => {
 // now we have to spend a lot time to fix the proble bcoz all we have is a broken code 
 // here version contrlo help us to revert the previous code within seconds so that later on we can fix the bug of that feature and deploy it
 
-    fetch('http://localhost:3000/weather-info?address=' + location).then((response) => {
+    fetch('/weather-info?address=' + location).then((response) => {//http://localhost:3000
         response.json().then((data) => {
             if (data.error) {
                 // console.log(data.error)
